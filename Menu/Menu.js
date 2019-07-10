@@ -1,12 +1,18 @@
 //list of options for the menu
-const options = [{li:"Students"},{li: "Faculty"}, {li:"What's New"}, {li:"Tech Trends"}, {li:"Music"}, {li: "Log Out"}]
-
+let menuItems = [
+  'Students',
+  'Faculty',
+  "What's New",
+  'Tech Trends',
+  'Music',
+  'Log Out'
+];
 //The menu div in html
 const menu = document.querySelector(".menu");
 
 //for looping through the list to append the information using function tab2 to the defined menu
-options.forEach( list =>{
- menu.appendChild(tab2(list.li))
+menuItems.forEach( list =>{
+ menu.appendChild(tab2(list))
 });
 
 //allows us to loop through the list and add as many options as we would like.
@@ -17,6 +23,8 @@ function tab2(li){
 
   //structure and append the elements to ul in html
   wholeMenu.appendChild(option);
+
+  option.textContent = li;
 
   return wholeMenu
 }
