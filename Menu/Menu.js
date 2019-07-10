@@ -1,10 +1,30 @@
+//list of options for the menu
+const options = [{li:"Students"},{li: "Faculty"}, {li:"What's New"}, {li:"Tech Trends"}, {li:"Music"}, {li: "Log Out"}]
+
+//The menu div in html
+const menu = document.querySelector(".menu");
+
+//for looping through the list to append the information using function tab2 to the defined menu
+options.forEach( list =>{
+ menu.appendChild(tab2(list.li))
+});
+
+//allows us to loop through the list and add as many options as we would like.
+function tab2(li){
+  //Creating the new elements
+  const wholeMenu = document.createElement('ul');
+  const option = document.createElement("li");
+
+  //structure and append the elements to ul in html
+  wholeMenu.appendChild(option);
+
+  return wholeMenu
+}
 const toggleMenu = () => {
   menu.classList.toggle('menu--open');
   // Toggle the "menu--open" class on your menu refence. 
 }
 
-// Start Here: Create a reference to the ".menu" class
-const menu = document.querySelector('.menu');
 // create a reference to the ".menu-button" class
 const menuButton = document.querySelector('.menu-button');
 // Using your menuButton reference, add a click handler that calls toggleMenu
